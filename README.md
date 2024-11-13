@@ -33,7 +33,7 @@ Once the data was cleaned and ready for analysis, the following steps were under
    - Comparison was conducted both before and after the addition of frequent itemsets to observe their effect on clustering results.
 6. **Results and Insights**:
    - Analyzed the outcomes and provided actionable insights to address the core objectives of the project, offering valuable guidance for decision-making.
-   - 
+   
 ## 🚧 Project Status
 This project is currently in progress. Additional analysis, refinement, and documentation are ongoing as we continue to enhance insights and methodologies. Stay tuned for updates as we delve deeper into clustering techniques and feature selection for optimal results.
 
