@@ -1,40 +1,46 @@
 # Tiki E-commerce Data Analysis
-This repository contains data and code for analyzing e-commerce data from the Tiki.vn platform, from initial data scraping to final analysis and modeling.
+
+This repository contains data and code for analyzing e-commerce data from the Tiki.vn platform, incorporating frequent itemset mining techniques to enhance clustering outcomes.
 
 ## 📁 Folder Structure
+
 ### Data
 The `Data` folder includes cleaned and raw datasets used in the project:
-- **data_cleaned.xlsx**: A consolidated and cleaned dataset, was created by merging and processing the raw data files below. This file is ready for analysis.
-- **product_info.xlsx**: Raw data containing product information across various stores.
+- **data_cleaned.xlsx**: A consolidated and cleaned dataset, created by merging and processing raw data files for analysis.
+- **product_info.xlsx**: Raw data containing product information from various stores.
 - **stores_info.xlsx**: Raw data containing information about each store.
-  
+
 ### Code
-The `Code` folder contains Jupyter notebooks covering the complete workflow, from data scraping to advanced data analysis:
-- **Data_Scraping_(Tiki).ipynb**: Contains the code for scraping data from Tiki.vn, along with basic data preprocessing steps.
-- **Data_Preprocessing_(Tiki).ipynb**: Includes comprehensive data preprocessing to create a clean, analysis-ready dataset.
-- **Data_Analysis_(Tiki).ipynb**: Contains data analysis and unsupervised learning algorithms to derive insights from the data.
+The `Code` folder contains Jupyter notebooks covering the complete workflow, from data scraping to advanced analysis:
+- **Data_Scraping_(Tiki).ipynb**: Contains code for scraping data from Tiki.vn and basic preprocessing steps.
+- **Data_Preprocessing_(Tiki).ipynb**: Includes detailed data preprocessing, including noise reduction and feature transformation.
+- **Data_Analysis_(Tiki).ipynb**: Covers data analysis and unsupervised learning algorithms to extract insights, integrating maximal frequent itemset mining.
 
 ## 🚀 Project Workflow
-1. **Data Collection**: Gathered data using web scraping on Tiki.vn.
-2. **Data Preprocessing**: Cleaned and transformed data into a suitable format for analysis.
-3. **Data Analysis and Modeling**: Analyzed data and applied unsupervised learning techniques to extract insights.
+
+1. **Data Collection**: Gathered store data using web scraping on Tiki.vn.
+2. **Data Preprocessing**:
+   - **Cleaning**: Removed duplicates and handled missing or inconsistent values.
+   - **Normalization**: Applied feature scaling for consistency.
+   - **Outlier Management**: Reduced noise using Winsorization, Isolation Forest, and DBSCAN.
+3. **Feature Engineering**:
+   - Integrated binary features using the FP-Max algorithm, transforming continuous attributes into binary ones for clustering.
+4. **Clustering**:
+   - Evaluated algorithms like **K-Means**, **Gaussian Mixture Models (GMM)**, and **Agglomerative Clustering**, before and after integrating frequent itemset-based features.
+5. **Model Evaluation**:
+   - Metrics such as **Silhouette Score**, **Davies-Bouldin Index**, and **Calinski-Harabasz Index** were used to assess clustering quality.
 
 ## 📈 Analysis Workflow
-Once the data was cleaned and ready for analysis, the following steps were undertaken to extract meaningful insights:
-1. **Exploratory Data Analysis (EDA)**: Conducted a comprehensive EDA to uncover key trends and patterns within the dataset, laying the foundation for deeper analysis.
-2. **Reliability Assessment**: Applied the Wilson Interval to assess and verify the reliability of information across stores, ensuring consistency and dependability.
-3. **Outlier Management**:
-   - **Noise Reduction**: Implemented Winsorization to minimize noise within the dataset.
-   - **Outlier Removal**: Utilized the Isolation Forest algorithm to detect and remove primary outliers. Additionally, applied the DBSCAN algorithm for a thorough review, identifying and addressing any remaining outliers.
-4. **Feature Selection**:
-   - **FP-Max** and **Forward Selection** methods were employed to identify and select high-impact features, enhancing the clustering process by focusing on the most relevant attributes.
-5. **Clustering Algorithms Comparison**:
-   - Evaluated the performance of various clustering algorithms, including **K-Means**, **Gaussian Mixture Models (GMM)**, and **Agglomerative Clustering**.
-   - Comparison was conducted both before and after the addition of frequent itemsets to observe their effect on clustering results.
-6. **Results and Insights**:
-   - Analyzed the outcomes and provided actionable insights to address the core objectives of the project, offering valuable guidance for decision-making.
-   
-## 🚧 Project Status
-This project is currently in progress. Additional analysis, refinement, and documentation are ongoing as we continue to enhance insights and methodologies. Stay tuned for updates as we delve deeper into clustering techniques and feature selection for optimal results.
 
+1. **Exploratory Data Analysis (EDA)**: Identified trends and patterns within the dataset.
+2. **Frequent Itemset Mining**: Enriched datasets with binary features derived from frequent patterns using FP-Max.
+3. **Clustering and Comparison**:
+   - Assessed clustering algorithms before and after binary feature integration.
+   - Enhanced evaluation using mixed data analysis tools like Gower distance.
+4. **Insights**:
+   - Identified store segments with distinct characteristics, providing actionable recommendations for improving business strategies.
 
+## 📝 Key Findings
+
+- Adding binary features derived from FP-Max significantly improved clustering quality.
+- Enhanced clusters provide deeper insights into store segmentation, enabling better strategy development for e-commerce platforms like Tiki.
